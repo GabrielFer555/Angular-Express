@@ -1,0 +1,16 @@
+{
+  "Contatos": [
+    {
+      "id": "1",
+      "nome": "Mariana",
+      "email": "Mariana@gmail.com",
+      "fone": "47999235825"
+    },
+    {
+      "id": "de5f",
+      "nome": "Gabriel",
+      "email": "Pedro",
+      "fone": "12121212121"
+    }
+  ]
+}

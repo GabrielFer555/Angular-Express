@@ -1,0 +1,62 @@
+ <section class="container">
+   <div>
+        <h2 class="title">Cadastro de Contatos</h2>
+        <form #f="ngForm" (ngSubmit)="salvar(f.value)" id="formContact">
+            <div class="row m-5 p-0 d-flex align-items-center">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="nome">Nome do Contato:</label>
+                    <input type="text" placeholder="Nome..." name="nome" ngModel class="form-control"  autocomplete="off">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="emailInput" placeholder="Insira seu Email..." ngModel
+                        class="form-control" autocomplete="off">
+                </div>
+            </div>
+            </div>
+            <div class="row d-flex align-items-center m-5">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="fone">Telefone:</label>
+                    <input class="form-control" type="text" name="fone" id="foneInput" placeholder="Insira o Telefone" ngModel  autocomplete="off" prefix="+(55) " mask="(00) 0 0000-0000">
+                </div>
+            </div>
+            <div class="myBtnGroup">
+                <button class="myBtn saveBtn">
+                    Save
+                </button>
+                <button class="myBtn cancelBtn">
+                    Cancelar
+                </button>
+            </div>
+                
+                 
+            </div>
+            
+        </form>
+    </div>
+    <div id="listaContatos">
+        <h2 class="title">Lista de Contatos</h2>
+        <table class="table table-stripped m-5">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ct of contatos">
+                    <td>{{ct.nome}}</td>
+                    <td>{{ct.email}}</td>
+                    <td>{{ct.fone}}</td>
+                    <td><button (click)="excluir(ct.id)"`>Excluir</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</section> 
