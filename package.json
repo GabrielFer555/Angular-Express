@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ngx-mask": "^17.0.4",
+    "survey-angular-ui": "^1.9.126"
+  }
+}
