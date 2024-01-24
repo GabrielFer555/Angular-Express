@@ -39,5 +39,53 @@ label {
     height: 100vh;
     min-width: 100%;
     max-height: 100vh;
-    overflow: hidden;
+    padding: 5rem;
+}
+
+.title{
+    text-align: center;
+}
+
+.myBtnGroup{
+    width: 100%;
+    margin-top: .7rem;
+    height: 4rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+.myBtn{
+    width: 10%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    margin: 0 5rem 0 0;
+    transition: 0.5s all ease-in-out;
+}
+.myBtn:hover{
+    cursor: pointer;
+    box-shadow: 0.2rem 0.2rem #000;
+}
+.saveBtn{
+    color: #fff;
+    background: #1ead66;
+}
+.saveBtn:hover{
+    background: #20bf6b;
+}
+.cancelBtn, .excludeBtn{
+    color: #fff;
+    background: #c0392b;
+}
+.cancelBtn:hover, .excludeBtn:hover{
+    background: #eb2f06;
+}
+.excludeBtn{
+    border: none;
+    width: 5rem;
+    transition: all 0.5s;
+    border-radius: 2rem;
 }

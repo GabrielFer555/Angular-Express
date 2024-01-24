@@ -24,22 +24,14 @@ export class FormsComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.consultar();
  }
 
-   public consultar():void {
-    this.httpClient.consultar().subscribe(data => 
-      {data.contatos.map((x:IContatos) => {this.contatos.push(x)})});
-  }
 
   public salvar(dados:any):void{
     console.log(dados)
-   this.httpClient.criar(dados).subscribe(()=> this.consultar())
+   this.httpClient.criar(dados).subscribe(()=> {})
   }
 
-  public excluir(id:any){
-
-  }
 
 
 }

@@ -1,0 +1,24 @@
+<section class="mainContent">
+<div id="listaContatos">
+    <h2 class="title">Lista de Contatos</h2>
+    <table class="table table-stripped m-5">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ct of contatos">
+                <td>{{ct.nome}}</td>
+                <td>{{ct.email}}</td>
+                <td>{{ct.fone}}</td>
+                <td><button class="excludeBtn" (click)="excluir(ct.id)">Excluir</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+</section> 

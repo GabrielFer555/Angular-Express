@@ -1,0 +1,41 @@
+.navBar{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    background: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navList{
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    margin-top: 1rem;
+    width: auto;
+}
+
+.navBtn{
+    border: none;
+    margin: 0 1rem 0 2rem ;
+    width: 9rem;
+    background-color: #2f3640;
+    border-radius: 0.3rem;
+    transition-property: 0.5s ease-in-out;
+}
+.navBtn:hover{
+    background: #363c42;
+}
+.navItem{
+    text-decoration: none;
+    color: #000;
+    color: #fff;
+}
+.logoContainer{
+    margin-right: 2rem;
+}
+.logo{
+    width: 3rem;
+    height: 3rem;
+}

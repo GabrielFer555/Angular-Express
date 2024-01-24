@@ -1,10 +1,11 @@
-const { PrismaClient } = require("@prisma/client")
-const express = require("express");
-const cors = require("cors")
+import { PrismaClient } from "@prisma/client"
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import 'dotenv/config'
+const port = process.env.PORT;
 const app = express();
-const port = 3002;
 const prisma = new PrismaClient();
-const bodyParser = require('body-parser')
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -42,6 +43,17 @@ app.get("/getContact/:id", async (req, res) => {
 });
 
 app.post("/createContact", async (req, res) => {
+
+    if(!req.body.nome || req.body.nome == ''){
+        return res.send(400).json({erro:"Contato sem nome informado"})
+    }
+    if(!req.body.email || req.body.email == ''){
+        return res.send(400).json({erro:"Contato sem email informado"})
+    }
+    if(!req.body.fone || req.body.fone == ''){
+        return res.send(400).json({erro:"Contato precisa ter um telefone informado"})
+    }
+
     try {
         const newContact = await prisma.contato.create({
             data: {
