@@ -18,9 +18,9 @@ app.listen(port, () => {
 app.get('/getAllContacts', async (req, res) => {
     try {
         let contacts = await prisma.contato.findMany();
-        return res.status(200).json({ contatos: contacts })
+        return res.sendStatus(200).json({ contatos: contacts })
     } catch (err) {
-        return res.status(400).json({ message: err })
+        return res.sendStatus(400).json({ message: err })
     }
 })
 
@@ -33,25 +33,25 @@ app.get("/getContact/:id", async (req, res) => {
         });
 
         if (!contact) {
-            return res.status(404).json({ message: "Not found" });
+            return res.sendStatus(404).json({ message: "Not found" });
         } else {
-            return res.status(200).json({ contact });
+            return res.sendStatus(200).json({ contact });
         }
     } catch (err) {
-        return res.status(500).json({ message: err.message });
+        return res.sendStatus(500).json({ message: err.message });
     }
 });
 
 app.post("/createContact", async (req, res) => {
 
     if(!req.body.nome || req.body.nome == ''){
-        return res.send(400).json({erro:"Contato sem nome informado"})
+        return res.sendStatus(400).json({erro:"Contato sem nome informado"})
     }
     if(!req.body.email || req.body.email == ''){
-        return res.send(400).json({erro:"Contato sem email informado"})
+        return res.sendStatus(400).json({erro:"Contato sem email informado"})
     }
     if(!req.body.fone || req.body.fone == ''){
-        return res.send(400).json({erro:"Contato precisa ter um telefone informado"})
+        return res.sendStatus(400).json({erro:"Contato precisa ter um telefone informado"})
     }
 
     try {
@@ -62,9 +62,9 @@ app.post("/createContact", async (req, res) => {
                 fone: req.body.fone
             }
         })
-        return res.status(201).json(newContact)
+        return res.sendStatus(201).json(newContact)
     } catch (err) {
-        return res.status(500).json({ message: err.message })
+        return res.sendStatus(500).json({ message: err.message })
     }
 })
 

@@ -19,7 +19,12 @@ export class ContactListComponent implements OnInit{
       this.consultar()
   }
   public consultar(){
-    this.httpClient.consultar().subscribe(data => this.contatos = data.contatos)
+    try{
+      this.httpClient.consultar().subscribe(data => this.contatos = data.contatos)
+    }catch(err){
+      console.log(err)
+    }
+   
   }
 
   public excluir(id:any):void{
