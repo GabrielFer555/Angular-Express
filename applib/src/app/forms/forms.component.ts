@@ -5,12 +5,13 @@ import { NgFor } from '@angular/common';
 import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { ContatoService } from '../contato.service';
 import { catchError } from 'rxjs';
+import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [FormsModule, NgFor, NgxMaskPipe, NgxMaskDirective, ReactiveFormsModule],
+  imports: [FormsModule, NgFor, NgxMaskPipe, NgxMaskDirective, ReactiveFormsModule, RouterModule],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'
 })
@@ -27,7 +28,7 @@ export class FormsComponent implements OnInit {
 
   contatos:IContatos[] =[]
 
-  constructor( private httpClient:ContatoService){
+  constructor( private httpClient:ContatoService, private router:Router, private routes:ActivatedRoute){
   }
 
   ngOnInit(){
@@ -40,9 +41,9 @@ export class FormsComponent implements OnInit {
       email: this.formFields.value.email!,
       fone: this.formFields.value.email!
     }
-    console.log(newContato)
+
     try{
-      this.httpClient.criar(newContato).subscribe(()=> {})
+      this.httpClient.criar(newContato).subscribe((data)=>  this.router.navigate(["/listaContatos"]))
     }catch(err){
       console.log(err)
     }

@@ -76,16 +76,24 @@ label {
 .saveBtn:hover{
     background: #20bf6b;
 }
+.saveBtn:disabled{
+    background-color: #06572c;
+    box-shadow: none;
+    opacity: 0.7;
+    cursor: default;
+}
 .cancelBtn, .excludeBtn{
     color: #fff;
     background: #c0392b;
 }
-.cancelBtn:hover, .excludeBtn:hover{
+.cancelBtn:hover{
     background: #eb2f06;
 }
-.excludeBtn{
-    border: none;
-    width: 5rem;
-    transition: all 0.5s;
-    border-radius: 2rem;
+
+.editBtn{
+    background: #fbc531;
+    color: #fff;
+}
+.editBtn:hover{
+    background: #e1b12c;
 }

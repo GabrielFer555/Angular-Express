@@ -15,7 +15,7 @@
 }
 
 .navBar:hover{    
-    width: 25%;
+    width: 20%;
     z-index: 1;
 }
 .navBarContent{
@@ -29,7 +29,7 @@
 
 .navBar:hover .navBarContent{
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .navList{
