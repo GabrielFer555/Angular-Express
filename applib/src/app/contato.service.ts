@@ -13,18 +13,21 @@ export class ContatoService {
   constructor(private http:HttpClient) { }
 
   public consultar():Observable<IContatosResponse>{
-    return this.http.get<IContatosResponse>("http://localhost:3002/contatos")
+    return this.http.get<IContatosResponse>("https://api-contatos-okv0.onrender.com/contatos")
   }
 
   public criar(contato:IContatos):Observable<IContatos>{
-    return this.http.post<IContatos>("http://localhost:3002/contatos", contato )
+    return this.http.post<IContatos>("https://api-contatos-okv0.onrender.com/contatos", contato )
   }
   
   public consultarPorId(id:string):Observable<IContatos>{
-    return this.http.get<IContatos>(`http://localhost:3002/contatos/${id}`)
+    return this.http.get<IContatos>(`https://api-contatos-okv0.onrender.com/contatos/${id}`)
   }
+
 
   /*public excluir(id:string):Observable<string>{
     
   }*/
 }
+
+
