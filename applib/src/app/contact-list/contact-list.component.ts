@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import IContatos from '../../Interfaces/IContatos';
 import { NgFor } from '@angular/common';
 import { ContatoService } from '../contato.service';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, RouterModule],
   templateUrl: './contact-list.component.html',
   styleUrl: './contact-list.component.css'
 })

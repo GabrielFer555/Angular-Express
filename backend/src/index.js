@@ -5,7 +5,7 @@ const dotenv = require('dotenv/config')
 const contato = require("./cadastroContatos")
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors())

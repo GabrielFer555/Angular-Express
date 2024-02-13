@@ -22,7 +22,7 @@
                             </span>
                         </button>
                     </td>
-                    <td><button class="btnList editBtn" (click)="excluir(ct.id)">
+                    <td><button class="btnList editBtn" [routerLink]="'/editarContato/' + ct.id">
                             <span class="material-symbols-rounded gearSimbol">
                                 settings
                             </span>
