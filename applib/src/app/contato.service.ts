@@ -24,6 +24,9 @@ export class ContatoService {
     return this.http.get<IContatos>(`https://api-contatos-okv0.onrender.com/contatos/${id}`)
   }
 
+  public salvarAlteracoes(contato:IContatos, id:string):Observable<IContatos>{
+    return this.http.put<IContatos>(`https://api-contatos-okv0.onrender.com/contatos/${id}`, contato)
+  }
 
   /*public excluir(id:string):Observable<string>{
     

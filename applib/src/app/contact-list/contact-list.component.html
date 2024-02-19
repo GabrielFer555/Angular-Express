@@ -1,6 +1,14 @@
 <section class="mainContent">
     <div id="listaContatos">
         <h2 class="title">Lista de Contatos</h2>
+        <div class="buttonGroup">
+            <button class="navButton" (click)="setShow()"><span class="material-symbols-outlined">
+                expand_more
+                </span></button>
+        </div>
+        <div class="inputBox" *ngIf="getShow()">
+            <input type="text" class="form-control searchInput" placeholder="Procure pelo nome do contato...">
+        </div>
         <table class="table table-stripped m-5">
             <thead>
                 <tr>
@@ -11,7 +19,7 @@
                     <th>#</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="this.contatos[0] != undefined">
                 <tr *ngFor="let ct of contatos">
                     <td>{{ct.nome}}</td>
                     <td>{{ct.email}}</td>
@@ -29,7 +37,9 @@
                         </button></td>
                 </tr>
             </tbody>
-
         </table>
+        <div class="noResultsContainer" *ngIf="this.contatos[0] == undefined">
+            <p class="noResults">Nada para mostrar. <br/> Vá e cadastre um contato.</p>
+        </div>
     </div>
 </section>

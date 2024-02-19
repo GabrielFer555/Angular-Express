@@ -25,3 +25,50 @@
         transform:rotate(360deg);
     }
 }
+
+.noResultsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.noResults{
+    opacity: 0.6;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.buttonGroup{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-flow: row nowrap;
+    margin-top: 2rem;
+}
+
+.navButton{
+    width: 8rem;
+    height: 3rem;
+    background: #c44d56;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navButton:hover{
+    background: #d91e18;
+}
+.inputBox{
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInput{
+    border: 0.1rem solid #000;
+    background: #d6d6d6;
+}
