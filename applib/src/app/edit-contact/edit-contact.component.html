@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="myBtnGroup">
-                    <button [disabled]="!formsEdit.valid" class="myBtn saveBtn" type="submit">
+                    <button [disabled]="!isFormValid" class="myBtn saveBtn" type="submit" (click)="salvarAlteracoes()">
                         Save
                     </button>
                     <button routerLink="/listaContatos" class="myBtn cancelBtn" type="reset">
