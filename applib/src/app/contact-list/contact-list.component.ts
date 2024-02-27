@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import IContatos from '../../Interfaces/IContatos';
 import { NgFor, NgIf } from '@angular/common';
 import { ContatoService } from '../contato.service';
-import { RouterLink, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-list',
@@ -15,7 +15,7 @@ export class ContactListComponent implements OnInit{
   contatos!:[IContatos];
   private show: boolean = false;
 
-  constructor(private httpClient: ContatoService){}
+  constructor(private httpClient: ContatoService, private route:ActivatedRoute, private router:Router){}
 
   ngOnInit(): void {
       this.consultar()
@@ -37,7 +37,12 @@ export class ContactListComponent implements OnInit{
   }
 
   public excluir(id:any):void{
-
+    try{
+      this.httpClient.excluir(id).subscribe((data) =>
+      this.consultar())
+    }catch(err){
+      console.log("Err")
+    }
   }
 }
 

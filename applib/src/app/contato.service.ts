@@ -28,9 +28,9 @@ export class ContatoService {
     return this.http.put<IContatos>(`https://api-contatos-okv0.onrender.com/contatos/${id}`, contato)
   }
 
-  /*public excluir(id:string):Observable<string>{
-    
-  }*/
+  public excluir(id:string):Observable<string>{
+    return this.http.delete<string>(`https://api-contatos-okv0.onrender.com/contatos/${id}`) 
+  }
 }
 
 

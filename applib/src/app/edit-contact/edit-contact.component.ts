@@ -45,8 +45,6 @@ export class EditContactComponent implements OnInit {
   }
 
 
-
-
   public consultarPorId(id: string) {
     try {
       this.httpClient.consultarPorId(id).subscribe(data => {
